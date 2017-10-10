@@ -29,8 +29,8 @@ LatestChaper</panel_attributes>
     <panel_attributes>UserList
 --
 _User_ID_
+Name
 UserName
-UserUserName
 UserPass
 UserMail
 
@@ -50,7 +50,7 @@ UserMail
 _ID_
 User_ID
 Manga_ID
-læstC</panel_attributes>
+ReadChaper</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -78,5 +78,49 @@ m2=M</panel_attributes>
 m1=1
 m2=M</panel_attributes>
     <additional_attributes>10.0;200.0;50.0;200.0;50.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>280</x>
+      <y>270</y>
+      <w>110</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>ErrorList
+--
+_Error_ID_
+DateTime
+ErrorType
+ErrorDescription</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>310</y>
+      <w>140</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>ErrorType
+--
+_ErrorType_ID_
+ErrorTypeName
+ErrorTypeDescription</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>380</x>
+      <y>330</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=M</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
