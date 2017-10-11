@@ -16,7 +16,7 @@ include "includes/header.php";
 		  </div>
 		  <div class="form-group">
     		<label for="exampleFormControlTextarea1">Error Report</label>
-    		<textarea class="form-control" rows="5"></textarea>
+    		<textarea class="form-control" rows="3"></textarea>
   		</div>
 		  <button type="submit" class="btn btn-primary">Submit</button>
 		</form>

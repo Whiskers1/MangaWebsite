@@ -5,14 +5,11 @@ $dbUserName = "dbAdmin";
 $dbPassword = "speedwagon";
 $dbName = "MangaDB";
 
-$server = mssql_connect($dbServerName, $dbUserName, $dbPassword);
+$conn = new mysqli_connect()($dbServerName, $dbUserName, $dbPassword, $dbName);
 
-if (!$server) {
-    die('Something went wrong while connecting to MSSQL Server');
-}
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+//echo "Connected successfully";
 
-$conn =  mssql_select_db($dbName, $server);
 
-if (!$conn) {
-    die('Something went wrong while connecting to MSSQL DataBase');
-}
