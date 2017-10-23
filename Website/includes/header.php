@@ -17,8 +17,8 @@
 <body style="margin-bottom: 50px">
 <header>
 	
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <a class="navbar-brand" href="index.php"><img src="img/img1.png" style="width: 30px; height: 30px;"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,9 +38,10 @@
         <a class="nav-link" href="MangaAdd.php">Add</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <form class="form-inline my-2 my-lg-0" action="includes/mangaSerach.inc.php" method="POST">
+      <input class="form-control mr-sm-2" type="text" name="text" placeholder="Search" aria-label="Search">
+      <input type="hidden" name="type" value="1">
+      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>

@@ -18,17 +18,6 @@ $arrlength = count($userName);
 <section>
 	<div class="container">
 		<div class="row">
-			<div class="col-10 pt-3">
-				<div class="progress ">
-			  <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25</div>
-			  <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20</div>
-			  <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30</div>
-			  <div class="progress-bar bg-secondary progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20</div>
-			  <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
 			<div class="col-3 pt-3">
 				<form action="index.php" method="POST">
 					<div class="form-group d-flex w-100 justify-content-between">
@@ -46,6 +35,17 @@ $arrlength = count($userName);
 		  </form>
 		 </div>
 		</div>
+		<div class="row">
+			<div class="col-10 pt-3">
+				<div class="progress ">
+			  <div class="progress-bar bg-success progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25</div>
+			  <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20</div>
+			  <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">30</div>
+			  <div class="progress-bar bg-secondary progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">20</div>
+			  <div class="progress-bar bg-danger progress-bar-striped" role="progressbar" style="width: 5%" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">5</div>
+				</div>
+			</div>
+		</div>	
 <?php 
 if (empty($_POST["userID"])) {	
 		$userID = 0;
@@ -90,7 +90,7 @@ $arrlength = count($name);
 ?>
 
 		<div class="row">
-			<div class="col-10">
+			<div class="col-10 pt-3">
 				<div class="list-group">
 					<div id="accordion" role="tablist">
 				  <?php  
