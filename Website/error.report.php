@@ -16,7 +16,6 @@ if ($result->num_rows > 0) {
 $arrlength = count($errorTypeN);
 ?>
 
-
 <section>
 	<div class="container">
 		<div class="row">
@@ -26,8 +25,8 @@ $arrlength = count($errorTypeN);
 						<label for="exampleFormControlSelect1">Error Type</label>
 			    <select name="type" class="form-control col-3 ">
 			    	<?php
-			    		for ($i=1; $i <= $arrlength ; $i++) { 
-			    			echo ';  
+			    		for ($i=1; $i <= $arrlength ; $i++) {
+			    			echo ';
 			    		<option value="'.$i.'">'.$errorTypeN[$i].'</option>
 			    		';
 			    		}
@@ -42,11 +41,10 @@ $arrlength = count($errorTypeN);
 				</form>
 			</div>
 			<div class="col pt-3">
-				<a class="badge badge-secondary" href="#" data-toggle="popover" data-container="body" data-trigger="focus" title="Hej" data-placement="bottom" data-content="med dig.">Info</a> 
+				<a class="badge badge-secondary" href="#" data-toggle="popover" data-container="body" data-trigger="focus" title="Hej" data-placement="bottom" data-content="med dig.">Info</a>
 			</div>
 		</div>
-	</div>
-</section>
+
 
 <?php
 include "includes/footer.php";

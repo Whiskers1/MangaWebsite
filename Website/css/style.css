@@ -1,9 +1,0 @@
-.linkNone a {
-    color: none;
-}
-
-.linkNone a:hover {
-    text-decoration: none;
-    color: none;
-
-}

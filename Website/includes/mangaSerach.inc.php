@@ -1,9 +1,13 @@
-<?php 
+<?php
 	include "dbh.php";
 	session_start();
 
 $type = $_POST['type'];
-$text = $_POST['text'];
+if (isset($_POST['text'])) {
+	$text = mysqli_real_escape_string($conn, $_POST['text']);
+} else {
+	$text = mysqli_real_escape_string($conn, "all");
+}
 
 if ($type == 1) {
 	$textS = str_replace(" ", "_", $text);
@@ -13,9 +17,9 @@ if ($type == 1) {
 	@$dom->loadHTMLFile($url);
 	$xpath = new DOMXpath($dom);
 
-	for ($i=1; $i <= 5 ; $i++) { 
+	for ($i=1; $i <= 5 ; $i++) {
 		$elements = $xpath->query("//*[@id=\"mangalist\"]/ul/li[".$i."]/div/a/@href");
-		
+
 		foreach ($elements as $key) {
 			$url = "http:".$key->nodeValue;
 			$domL = new DOMDocument;
@@ -29,6 +33,7 @@ if ($type == 1) {
 
 			$img = $xpathL->query("//*[@id=\"series_info\"]/div[1]/img/@src");
 			$summary = $xpathL->query("//*[@id=\"title\"]/p");
+
 			$latestC = $xpathL->query("//*[@id=\"chapters\"]/ul[1]/li[1]/div/h3/a");
 
 			foreach ($img as $keyI) {
@@ -46,9 +51,8 @@ if ($type == 1) {
 			};
 		};
 	}
-$_SESSION["serach[HTTP]"] = $MangaHTTP;
 } elseif ($type == 2) {
-	
+
 	$sql = "SELECT * FROM `mangalist` WHERE `MangaName` LIKE'%".$text."%';";
 	$result = $conn->query($sql);
 	$i=1;
@@ -58,6 +62,7 @@ $_SESSION["serach[HTTP]"] = $MangaHTTP;
 			$MangaLatestC[$i] = $row["LatestChapter"];
 			$MangaImg[$i] = $row["ImgLink"];
 			$MangaSummary[$i] = $row["Summary"];
+			$MangaHTTP[$i] = $row["MangaID"];
 			$i++;
 		}
 	} else {
@@ -65,11 +70,12 @@ $_SESSION["serach[HTTP]"] = $MangaHTTP;
 	}
 }
 
-
 $_SESSION["serach[name]"] = $MangaName;
 $_SESSION["serach[img]"] = $MangaImg;
 $_SESSION["serach[summary]"] = $MangaSummary;
 $_SESSION["serach[LatestC]"] = $MangaLatestC;
+$_SESSION["serach[HTTP]"] = $MangaHTTP;
+$_SESSION["serach[type]"] = $type;
 
-
-header("Location: ../MangaAdd.php");
+header("Location: ../manga.add.php");
+exit();
